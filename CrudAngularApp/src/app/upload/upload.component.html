@@ -1,0 +1,25 @@
+<div class="row" style="margin-bottom: 15px;">
+    <div class="col-md-12">
+        <input type="file" #file placeholder="إختر الصورة" (change)="uploadFile(file.files)"
+        style="display: none">
+        <button type="button" class="form-control" (click)="file.click()">رفع الصورة</button>
+    </div>
+    <br/>
+    <div class="col-md-12 mt-1" *ngIf="message == 'تم الرفع بنجاح'">
+        <span class="upload text-success" *ngIf="message == 'تم الرفع بنجاح'">
+           %{{progress}}
+        </span>
+        <span class="upload text-success" *ngIf="message">
+            {{message}}
+        </span>
+    </div>
+
+    <div class="col-md-12 mt-1" *ngIf="message != 'تم الرفع بنجاح'">
+        <span class="upload text-danger" *ngIf="message == 'تم الرفع بنجاح'">
+            {{progress}}%
+        </span>
+        <span class="upload text-danger" *ngIf="message">
+            {{message}}
+        </span>
+    </div>
+</div>
